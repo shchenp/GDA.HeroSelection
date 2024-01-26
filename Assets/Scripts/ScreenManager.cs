@@ -4,18 +4,21 @@ using Screen = Extensions.Screen;
 
 public class ScreenManager : MonoBehaviour
 {
-    [SerializeField] private Screen _lobbyScreen;
-    [SerializeField] private Screen _heroSelectorScreen;
+    public HeroSelectionScreen HeroSelectionScreen => _heroSelectionScreen;
+    public LobbyScreen LobbyScreen => _lobbyScreen;
+
+    [SerializeField] private HeroSelectionScreen _heroSelectionScreen;
+    [SerializeField] private LobbyScreen _lobbyScreen;
 
     public void SetCoins(int coins)
     {
         _lobbyScreen.SetCoins(coins);
-        _heroSelectorScreen.SetCoins(coins);
+        _heroSelectionScreen.SetCoins(coins);
     }
 
     public void SetDiamonds(int diamonds)
     {
         _lobbyScreen.SetDiamonds(diamonds);
-        _heroSelectorScreen.SetDiamonds(diamonds);
+        _heroSelectionScreen.SetDiamonds(diamonds);
     }
 }
